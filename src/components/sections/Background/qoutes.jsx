@@ -35,8 +35,8 @@ const SelftQoutes = (props) => {
   }, [props.isAboutVisible, qoutesDiv]);
   return (
     <>
-      <div ref={qoutesDiv} className=" h-[100vh] p-3 scroll-pb-7 ">
-        <div className="text-6xl pt-20 flex items-center text-center font-bold">
+      <div ref={qoutesDiv} className=" h-[100vh] p-3  pb-0">
+        <div className="text-6xl 2xl:text-[90px] pt-20 flex items-center text-center font-bold">
           <p id="qoutes" className="qoutes uppercase ">
             "Don't wait until you feel good enough to{" "}
             <span className="text-c_Orange">start doing something</span>. Ideas

@@ -2,6 +2,7 @@ import LogoImage from "../../../assets/FinalLogo-removebg.png";
 import DisplayPicture from "../../../assets/nobackgroundsquare.jpg.png";
 import moonImage from "../../../assets/moon-photo.png";
 import In1goLogo from "../../../assets/1go-logo.svg";
+import cvFile from "../../../assets/pdf/Resume - Prince Jairo Fortuna.pdf";
 import { useRef, useEffect, useContext, useState } from "react";
 import "../main.scss";
 import { gsap } from "gsap/all";
@@ -39,13 +40,14 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { AiOutlineCopyright } from "react-icons/ai";
 import SvnLogo from "../../../assets/svn.png";
 
-import AboutfirstSection from "./IntroQoutes";
+import IntroQoutes from "./IntroQoutes";
 import SplitType from "split-type";
+import Menu from "../../menu";
 
 const IndexMobile = () => {
   const profileImage = useRef(null);
-  const moonBlobRef = useRef(null);
-  const blob = useRef(null);
+  // const moonBlobRef = useRef(null);
+  // const blob = useRef(null);
 
   const [isTriggerActivated, setIsTriggerActivated] = useState(false);
 
@@ -64,6 +66,7 @@ const IndexMobile = () => {
       trigger: animateHelloEl,
       start: "top bottom",
       end: "center center",
+      // markers:true,
       scrub: true,
 
       onEnter: () => {
@@ -101,6 +104,7 @@ const IndexMobile = () => {
     });
   }, []);
 
+  //the first scroll
   const moon = useRef(null);
   const moonImagetest = useRef(null);
   useEffect(() => {
@@ -110,38 +114,31 @@ const IndexMobile = () => {
       trigger: moonEl,
       start: "top 80%",
       end: "center center",
+      // markers:true,
       scrub: true,
       onEnter: () => {
-        // gsap.fromTo(
-        //   profileImageEl,
-        //   // { y: 100, x: -100, opacity: 0 },
-        //   // { y: 0, x: 0, opacity: 1, duration: 2 }
-        // );
-        gsap.to(
-          moonImageEl,
-          { scale: 1.4, y: "700px", x: "130px", duration: 3.0 }
-          // { y: 0, x: 0, opacity: 1, duration: 2, delay: 1 }
-        );
+        gsap.to(moonImageEl, {
+          scale: 1.4,
+          y: "800px",
+          x: "130px",
+          duration: 3.0,
+        });
       },
       onLeave: () => {
-        gsap.to(
-          moonImageEl,
-          { scale: 1, y: "830px", x: "270px", duration: 3 }
-          // { y: 0, x: 0, opacity: 1, duration: 2, delay: 1 }
-        );
+        gsap.to(moonImageEl, { scale: 1, y: "800px", x: "260px", duration: 3 });
       },
     });
   }, []);
-
+  //second scroll
   useEffect(() => {
     const profileImageEl = profileImage.current;
-    const moonBlobRefEl = moonBlobRef.current;
-    const blobEl = blob.current;
+    // const moonBlobRefEl = moonBlobRef.current;
+    // const blobEl = blob.current;
     const moonImageEl = moonImagetest.current;
 
     ScrollTrigger.create({
       trigger: profileImageEl,
-      start: "top bottom",
+      start: "top 50%",
       end: "top 20%",
       // markers: true,
       scrub: true,
@@ -156,24 +153,25 @@ const IndexMobile = () => {
             onComplete: () => setIsTriggerActivated(true),
           }
         );
-        gsap.to(
-          moonImageEl,
-          { scale: 1, y: "1244px", x: "120px", duration: 2, opacity: 0 }
-          // { y: 0, x: 0, opacity: 1, duration: 2, delay: 1 }
-        );
-        gsap.fromTo(
-          moonBlobRefEl,
-          {
-            opacity: 0,
-            duration: 1,
-            onComplete: () => setIsTriggerActivated(true),
-          },
-          {
-            opacity: 1,
-            delay: 2,
-            // onComplete: () => setIsTriggerActivated(true),
-          }
-        );
+        gsap.to(moonImageEl, {
+          scale: 1,
+          y: "1244px",
+          x: "130px",
+          duration: 2,
+          opacity: 0,
+        });
+        // gsap.fromTo(
+        //   moonBlobRefEl,
+        //   {
+        //     opacity: 0,
+        //     duration: 1,
+        //     onComplete: () => setIsTriggerActivated(true),
+        //   },
+        //   {
+        //     opacity: 1,
+        //     delay: 2,
+        //   }
+        // );
       },
     });
   }, []);
@@ -418,15 +416,38 @@ const IndexMobile = () => {
 
   return (
     <>
-      {/* for mobile */}
-      <div className="md:hidden panel bg-slate-700 h-[100vh] ">
-        <AboutfirstSection />
+      <div className="md:hidden">
+        <Menu></Menu>
       </div>
-      <div ref={moon} className="md:hidden panel bg-black h-[100vh] ">
+      {/* for mobile */}
+      <div className="md:hidden panel bg-slate-950  h-[100vh] ">
+        <div className="w-screen flex justify-center items-center h-screen px-70 font-poppins ">
+          <div className="md:w-3/4 lg:w-5/6  flex justify-center items-center">
+            <div className=" text-c_White px-8  max-w-sm text-center space-y-6 font-extrabold text-3xl   md:max-w-4xl md:text-5xl lg:max-w-max lg:text-6xl  flex flex-col ">
+              {/* <div ref={frogAnimateRef} className="absolute bottom-20 right-9">
+                <GiFrogPrince className="hidden md:block text-c_Orange text-[50px]" />
+              </div> */}
+
+              <span className="leading-tight ">
+                The most <span className="">Knowledgeable Experience </span>
+                is the
+                <span className="text-c_Orange"> Experience</span> that has
+                <span className="text-c_Orange"> Failure</span>.
+              </span>
+              <span className="leading-tight">
+                Not the <span className="text-c_Orange">Experience</span> full
+                of <span className="text-c_Orange">Perfection </span>
+                and Immediate <span className="animate-pulse">Success</span>.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ref={moon} className="md:hidden panel bg-black  h-[100vh] ">
         <div className="  ">
           <img
             ref={moonImagetest}
-            className="moon w-36 h-36 absolute -top-[570px] -left-[50px] mx-auto z-0"
+            className="moon w-36 h-36 relative -top-[44rem] -left-[9rem] mx-auto z-0"
             src={moonImage}
             alt=""
           />
@@ -438,7 +459,7 @@ const IndexMobile = () => {
           <img className="w-[50px] " src={LogoImage} alt="" />
         </div> */}
         <div className=" px-6">
-          <div className="h-[100vh] pt-32">
+          <div className="">
             <div>
               <div className=" ">
                 <p ref={animateHello} className="text-[16px]">
@@ -473,12 +494,14 @@ const IndexMobile = () => {
                     </div>
                   </div>
 
-                  <button
+                  <a
                     ref={animateDownloadCvBtn}
-                    className="bg-c_Black border text-white border-c_Orange p-3 font-extralight"
+                    href={cvFile}
+                    download="CV - Prince Jairo Fortuna.pdf"
+                    className="inline-block bg-c_Black border text-white border-c_Orange p-3 font-extralight"
                   >
                     Download CV
-                  </button>
+                  </a>
 
                   <div className="text-2xl text-c_Orange flex justify-between w-40 md:w-44">
                     <span>
@@ -507,21 +530,22 @@ const IndexMobile = () => {
               <img
                 ref={profileImage}
                 className={`border-l-2 border-c_Orange z-10 relative mx-auto w-60 rounded-[100%] ${
-                  isTriggerActivated ? "block" : "hidden"
+                  isTriggerActivated ? "" : ""
                 }`}
                 src={DisplayPicture}
                 alt=""
               />
               {/* -top-[170px] left-[70px] */}
-              <div
+              {/* <div
                 ref={moonBlobRef}
-                className={`z-0 absolute top-[1775px] left-[80px] animate-blob filter ${
+              
+                className={`z-0 relative  animate-blob filter ${
                   isTriggerActivated ? "block" : "hidden"
                 }`}
               >
-                {/* <div className="mx-auto w-36 h-36 bg-c_White rounded-full  "></div> */}
+               
                 <img className="moon w-36 h-36   " src={moonImage} alt="" />
-              </div>
+              </div> */}
             </div>
             <div className="space-y-10 ">
               <div className="">

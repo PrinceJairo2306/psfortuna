@@ -47,19 +47,21 @@ const Notice = (props) => {
   return (
     <>
       <div ref={noticeRef} className="h-[100vh] ">
-        <div className="pt-36">
-          <h1 className="uppercase text-3xl font-semibold pb-5  ">Notice</h1>
-          <p ref={noticeIntroRef} className="indent-10">
+        <div className="pt-36 ">
+          <h1 className="uppercase text-3xl font-semibold pb-5  2xl:text-5xl 2xl:pb-12 ">
+            Notice
+          </h1>
+          <p ref={noticeIntroRef} className="indent-10 2xl:text-[22px] ">
             The developer is still quite short on time ,this is only 40% done,
             and some tabs are still disabled, Please stop laughing at him. He
             might be doing someting important or definitly not.
           </p>
 
-          <div className="p-20 pt-10 pl-12   flex">
+          <div className="p-20  pt-10  2xl:pt-32 pl-12   flex">
             <div ref={deadEndLogoRef} className="text-8xl pt-16 w-[30%]">
               <BsFillSignDeadEndFill className="text-c_Orange " />
             </div>
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col 2xl:text-[22px]">
               <div
                 ref={noticeBodyRef}
                 className="-ml-4 flex-col items-center space-y-2 "
@@ -94,7 +96,7 @@ const Notice = (props) => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

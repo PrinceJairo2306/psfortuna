@@ -42,7 +42,7 @@ const IntroQoutes = (props) => {
 
   return (
     <>
-      <div className="hidden md:flex absolute z-50 ">
+      <div className="hidden md:flex absolute  ">
         <div className={props.isAboutVisible ? "" : "hidden"}>
           <div className="overflow-hidden">
             <div className="bg-c_Black w-screen ">

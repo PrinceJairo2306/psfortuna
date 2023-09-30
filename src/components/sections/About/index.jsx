@@ -48,11 +48,13 @@ const About = (props) => {
 
   return (
     <>
-      <div className="space-y-6 h-[100vh]">
+      <div className="space-y-6 2xl:space-y-28 h-[100vh]">
         <div className="">
-          <h1 className="text-3xl font-semibold pb-2 ">PROFILE</h1>
+          <h1 className="text-3xl 2xl:text-5xl font-semibold pb-2 2xl:pb-12 ">
+            PROFILE
+          </h1>
           <div ref={profileContext} className="profile-context">
-            <p className="leading-loose mx-auto opacity-95 indent-10 ">
+            <p className="2xl:text-[18px] leading-loose mx-auto opacity-95 indent-10 ">
               Currently based in the Philippines, I am a full-stack developer
               who specializes in web development. If not{" "}
               <span className="text-c_Orange">coding</span>, you'll usually find
@@ -67,16 +69,18 @@ const About = (props) => {
           </div>
         </div>
         <div>
-          <h1 className="text-3xl font-semibold pb-5  ">ARSENAL</h1>
+          <h1 className="text-3xl 2xl:text-5xl font-semibold pb-5 2xl:pb-16 ">
+            ARSENAL
+          </h1>
           {/* bg-[#1a1a1a] */}
           <div className=" ">
             <div className="mx-auto opacity-95 pb-2 indent-10 text-justify">
               <div className="flex justify-around">
                 <div
                   ref={arsenalBox1}
-                  className="flex  bg-[#1a1a1a] px-12 py-6    rounded-md "
+                  className="flex 2xl:w-[40%] bg-[#1a1a1a] px-12 py-6 2xl:px-10 2xl:py-10  rounded-md 2xl:space-x-20"
                 >
-                  <div className="space-y-4 ">
+                  <div className="space-y-4  2xl:space-y-10 ">
                     <span className="flex ">
                       <SiJavascript className="text-[35px]" />
                       <p className="text-sm relative -left-7 ">
@@ -96,7 +100,7 @@ const About = (props) => {
                       <p className="text-sm relative -left-7 ">NodeJs</p>
                     </span>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-4  2xl:space-y-10 ">
                     <span className="flex ">
                       <SiPhp className="text-[35px]" />
                       <p className="text-sm relative -left-7 ">Php</p>
@@ -117,9 +121,9 @@ const About = (props) => {
                 </div>
                 <div
                   ref={arsenalBox2}
-                  className="flex bg-[#1a1a1a] px-12 py-6 rounded-md"
+                  className="flex 2xl:w-[40%] bg-[#1a1a1a] px-12 py-6 2xl:px-10 2xl:py-10   rounded-md 2xl:space-x-20"
                 >
-                  <div className="space-y-4 ">
+                  <div className="space-y-4  2xl:space-y-10">
                     <span className="flex ">
                       <SiMicrosoftsqlserver className="text-[35px]" />
                       <p className="text-sm relative -left-7 ">MsSQL</p>
@@ -137,7 +141,7 @@ const About = (props) => {
                       <p className="text-sm relative -left-8">Tortoise SVN</p>
                     </span>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-4  2xl:space-y-10">
                     <span className="flex ">
                       <IoLogoCss3 className="text-[35px]" />
                       <p className="text-sm relative -left-7 ">Css</p>

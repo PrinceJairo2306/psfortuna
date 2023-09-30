@@ -34,8 +34,6 @@ const Main = () => {
 
   return (
     <>
-      <Menu></Menu>
-
       {/* for bigger screen */}
       <IntroQoutes
         isAboutVisible={isAboutVisible}
@@ -43,7 +41,7 @@ const Main = () => {
       />
 
       <div className={isAboutVisible ? "hidden" : ""}>
-        <section className="hidden md:flex bg-black ">
+        <section className=" md:flex bg-black ">
           <div className="pb-10 w-[45%] h-[100vh] "></div>
 
           <SideContent
@@ -53,6 +51,7 @@ const Main = () => {
 
           <div className="w-full font-poppins pr-9 text-c_White">
             <div className=" pt-16 px-7">
+              <Menu></Menu>
               <About isAboutVisible={isAboutVisible} />
               <Experience isAboutVisible={isAboutVisible} />
               <MyStory isAboutVisible={isAboutVisible} />
@@ -63,6 +62,7 @@ const Main = () => {
       </div>
       {/* for bigger screen */}
       <IndexMobile></IndexMobile>
+      
     </>
   );
 };

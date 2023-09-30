@@ -13,7 +13,7 @@ const Hamburger = (props) => {
   return (
     <div className="fixed z-50  top-1 right-0 md:top-5 md:right-2">
       <button
-        className="menu  m-3 z-10 "
+        className="menu m-3 z-10 "
         onClick={onClickHandler}
         aria-label="Main Menu"
       >

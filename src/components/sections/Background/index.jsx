@@ -59,9 +59,11 @@ const MyStory = (props) => {
   return (
     <>
       <SelftQoutes isAboutVisible={props.isAboutVisible} />
-      <div ref={myStory} id="backGroundSection" className=" h-[100%] ">
-        <h1 className="uppercase text-3xl font-semibold pb-5  ">My Story</h1>
-        <p ref={storyFirstParagraph} className="indent-10">
+      <h1 className="uppercase text-3xl font-semibold pb-5   2xl:text-5xl 2xl:pb-10">
+        My Story
+      </h1>
+      <div ref={myStory} id="backGroundSection" className="space-y-4">
+        <p ref={storyFirstParagraph} className="indent-10 2xl:text-[22px]">
           I graduated with a Bachelor of Science in Computer Science in 2022. My
           love for computers began with video games,yip! just like any normal
           kid. Back then, I didn't have access to gadgets and other resources
@@ -77,7 +79,7 @@ const MyStory = (props) => {
           .
         </p>
         <br />
-        <p ref={storySecondParagraph} className="indent-10">
+        <p ref={storySecondParagraph} className="indent-10 2xl:text-[22px]">
           I met programming when I started college. To be honest, I wasn't the
           sharpest one in the room when it came to programming. I didn't possess
           the ultra-mega-alpha-elon-zuckerberg level of logical thinking. I was
@@ -93,7 +95,7 @@ const MyStory = (props) => {
           before I knew it, it became part of my life.
         </p>
         <br />
-        <p ref={storyThirdParagraph} className="indent-10">
+        <p ref={storyThirdParagraph} className="indent-10 2xl:text-[22px]">
           Okiii, you may have just wasted some time reading something seemingly
           pointless again. But I wanted to convey a random message i just made
           up: if you feel like you're lacking something in life, whether it's

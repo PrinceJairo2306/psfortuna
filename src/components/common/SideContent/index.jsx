@@ -1,7 +1,8 @@
 import { useRef, useEffect, useContext, useState } from "react";
 
-import moonImage from "../../../assets/moon-photo.png";
+import moonImage from "./moon-photo.png";
 import DisplayPicture from "../../../assets/nobackgroundsquare.jpg.png";
+import cvFile from "../../../assets/pdf/Resume - Prince Jairo Fortuna.pdf";
 
 import { GiFrogPrince } from "react-icons/gi";
 import { GrLinkedin } from "react-icons/gr";
@@ -52,10 +53,10 @@ const SideContent = (props) => {
   return (
     <>
       {" "}
-      <div className="pb-10 pl-10 fixed  w-[30%] h-[100vh] rounded flex justify-end items-end  bg-[#1a1a1a]">
+      <div className="pb-10 pl-10 fixed  w-[30%] h-[100vh] rounded flex items-end 2xl:items-center  bg-[#1a1a1a]">
         {/* put the side scroll here  bg-[#1a1a1a]*/}
 
-        <div className="py-2">
+        <div className=" pt-48">
           {/* intro */}
           <div className="w-3/4    font-poppins flex  text-c_White ">
             <GiFrogPrince
@@ -63,21 +64,24 @@ const SideContent = (props) => {
               className=" text-[50px] text-c_Orange  z-30 absolute top-5 left-5"
             />
             <div>
-              <div className=" ">
-                <p ref={animateHello} className="text-[16px]">
+              <div className=" 2xl:space-y-3">
+                <p ref={animateHello} className="text-[16px] 2xl:text-[22px]">
                   {" "}
                   Hello, I'm{" "}
                 </p>
 
-                <div ref={animateFullName} className="text-3xl font-bold">
+                <div
+                  ref={animateFullName}
+                  className="text-3xl 2xl:text-5xl font-bold "
+                >
                   <h1>PRINCE JAIRO </h1>
-                  <span className="text-[56px] md:text-6xl text-c_Orange">
+                  <span className="text-[56px] 2xl:text-[88px] text-c_Orange">
                     FORTUNA.
                   </span>
                 </div>
                 <p
                   ref={animateJobTitle}
-                  className="text-base text-c_Orange font-extrabold"
+                  className="text-base 2xl:text-[26px] text-c_Orange font-extrabold"
                 >
                   Software Developer
                 </p>
@@ -85,25 +89,27 @@ const SideContent = (props) => {
                 <div className="space-y-6 pt-2 ">
                   <div
                     ref={animateIntroMessage}
-                    className=" text-left text-sm w-[67%]  "
+                    className="text-left text-sm w-[67%]  2xl:w-[66%] 2xl:text-[16px]"
                   >
                     {" "}
                     People would usually call me Prince or Jai. However, any
-                    name you use is perfectly
-                    <div>
-                      fine with me. Just refrain <br /> from calling me cute , I
-                      wouldn't want to start believing it.
-                    </div>
+                    name you <br className="hidden 2xl:block" /> use is
+                    perfectly fine with me. <br className="hidden 2xl:block" />{" "}
+                    Just refrain from calling me{" "}
+                    <br className="hidden 2xl:block" /> cute , I wouldn't want
+                    to start believing it.
                   </div>
 
-                  <button
+                  <a
                     ref={animateDownloadCvBtn}
-                    className="bg-c_Black border text-white border-c_Orange p-3 font-extralight"
+                    className="inline-block bg-c_Black border text-white border-c_Orange p-3 2xl:p-6 2xl:px-10  font-extralight"
+                    href={cvFile}
+                    download="CV - Prince Jairo Fortuna.pdf"
                   >
                     Download CV
-                  </button>
+                  </a>
 
-                  <div className="text-2xl text-c_Orange flex justify-between w-40 md:w-44">
+                  <div className="text-2xl 2xl:text-3xl text-c_Orange flex justify-between w-44 2xl:w-60">
                     <span>
                       <GrLinkedin className="" />
                     </span>
@@ -123,29 +129,25 @@ const SideContent = (props) => {
                 </div>
               </div>
             </div>
-            {/* image */}
-            <div></div>
-            <div className="absolute z-10 top-[47%] left-[40%]  ">
-              <img
-                className="border-r-2 border-c_Orange  w-[250px]  rounded-[100%]"
-                src={DisplayPicture}
-                alt=""
-              />
-            </div>
-            <div className="z-0 absolute left-[200px] bottom-[110px]">
-              <div className="">
-                <div
-                  className={`md:w-[170px] opacity-100  rounded-full  filter animate-blob2 `}
-                >
-                  <img className="" src={moonImage} alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div></div>
-            {/* content */}
           </div>
-          {/* intro */}
+        </div>
+        {/* image */}
+
+        <div className="absolute w-[180px] left-52 bottom-36 2xl:w-[260px] 2xl:left-72 2xl:bottom-48">
+          <img
+            className="border-r-2 border-c_Orange rounded-[100%]"
+            src={DisplayPicture}
+            alt=""
+          />
+          <div
+            className="absolute inset-4 rounded-full animate-blob2"
+            style={{
+              backgroundImage: `url(${moonImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: -1, // Set a negative z-index to position it behind the image
+            }}
+          />
         </div>
       </div>
     </>
